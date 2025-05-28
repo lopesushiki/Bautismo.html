@@ -1,245 +1,274 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz sobre el Bautismo</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        .question {
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .question p {
-            margin: 0 0 10px;
-            font-weight: bold;
-        }
-        .options label {
-            display: block;
-            margin: 5px 0;
-            cursor: pointer;
-        }
-        button {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        #result {
-            text-align: center;
-            font-size: 18px;
-            margin-top: 20px;
-            padding: 15px;
-            background-color: #e9ecef;
-            border-radius: 5px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz sobre o Batismo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f2f2f2;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .question {
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .question p {
+      margin: 0 0 10px;
+      font-weight: bold;
+    }
+    .options label {
+      display: block;
+      margin: 5px 0;
+      cursor: pointer;
+    }
+    button {
+      display: inline-block;
+      margin: 15px 10px;
+      padding: 12px 24px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #result {
+      text-align: center;
+      font-size: 18px;
+      margin-top: 30px;
+      padding: 15px;
+      background-color: #dff0d8;
+      border-radius: 5px;
+    }
+    #studentInfo {
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: #e0f7fa;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Quiz sobre el Bautismo</h1>
-    <form id="quizForm">
-        <div class="question">
-            <p>1. ¿Qué simboliza el bautismo en la vida de un cristiano?</p>
-            <div class="options">
-                <label><input type="radio" name="q1" value="a"> Una elección consciente, obediencia y transformación</label>
-                <label><input type="radio" name="q1" value="b"> Un ritual sin importancia</label>
-                <label><input type="radio" name="q1" value="c"> Solo una tradición cultural</label>
-                <label><input type="radio" name="q1" value="d"> Un acto para ganar méritos</label>
-            </div>
-        </div>
-        <div class="question">
-            <p>2. ¿Por qué el bautismo es un mandamiento de Jesús?</p>
-            <div class="options">
-                <label><input type="radio" name="q2" value="a"> Porque es una tradición antigua</label>
-                <label><input type="radio" name="q2" value="b"> Porque es opcional para los creyentes</label>
-                <label><input type="radio" name="q2" value="c"> Porque Jesús lo ordenó en la Gran Comisión (Mateo 28:19)</label>
-                <label><input type="radio" name="q2" value="d"> Porque solo los líderes pueden decidirlo</label>
-            </div>
-        </div>
-        <div class="question">
-            <p>3. ¿Qué significa ser una “nueva criatura” en Cristo?</p>
-            <div class="options">
-                <label><input type="radio" name="q3" value="a"> Seguir las mismas costumbres</label>
-                <label><input type="radio" name="q3" value="b"> Cambiar de religión sin compromiso</label>
-                <label><input type="radio" name="q3" value="c"> Que el pasado ya no nos define y vivimos transformados</label>
-                <label><input type="radio" name="q3" value="d"> Olvidar completamente el pasado sin fe</label>
-            </div>
-        </div>
-        <div class="question">
-            <p>4. ¿Qué representa la inmersión en el agua durante el bautismo?</p>
-            <div class="options">
-                <label><input type="radio" name="q4" value="a"> Un baño común</label>
-                <label><input type="radio" name="q4" value="b"> Un símbolo de riqueza</label>
-                <label><input type="radio" name="q4" value="c"> Una ceremonia sin significado</label>
-                <label><input type="radio" name="q4" value="d"> La muerte a la vieja vida y sepultura con Cristo</label>
-            </div>
-        </div>
-        <div class="question">
-            <p>5. ¿Cuál fue el papel de Juan el Bautista en el bautismo?</p>
-            <div class="options">
-                <label><input type="radio" name="q5" value="a"> Crear una nueva religión</label>
-                <label><input type="radio" name="q5" value="b"> Preparar el camino para el Mesías y bautizar para arrepentimiento</label>
-                <label><input type="radio" name="q5" value="c"> Enseñar solo sobre la ley</label>
-                <label><input type="radio" name="q5" value="d"> Evitar el bautismo</label>
-            </div>
-        </div>
-        <div class="question">
-            <p>6. ¿Por qué Jesús, siendo sin pecado, fue bautizado?</p>
-            <div class="options">
-                <label><input type="radio" name="q6" value="a"> Para arrepentirse de sus pecados</label>
-                <label><input type="radio" name="q6" value="b"> Porque era obligatorio para todos</label>
-                <label><input type="radio" name="q6" value="c"> Para ser ejemplo del camino a seguir</label>
-                <label><input type="radio" name="q6" value="d"> Para cumplir una tradición judía</label>
-            </div>
-        </div>
-        <div class="question">
-            <p>7. ¿Qué relación tiene el bautismo con la salvación según Marcos 16:16?</p>
-            <div class="options">
-                <label><input type="radio" name="q7" value="a"> El que cree y es bautizado será salvo</label>
-                <label><input type="radio" name="q7" value="b"> No tiene ninguna relación</label>
-                <label><input type="radio" name="q7" value="c"> Solo la fe es suficiente</label>
-                <label><input type="radio" name="q7" value="d"> Solo el bautismo salva</label>
-            </div>
-        </div>
-        <div class="question">
-            <p>8. ¿Qué simboliza el acto de emerger del agua en el bautismo?</p>
-            <div class="options">
-                <label><input type="radio" name="q8" value="a"> Un ritual sin importancia</label>
-                <label><input type="radio" name="q8" value="b"> La continuación de la vieja vida</label>
-                <label><input type="radio" name="q8" value="c"> Un nuevo comienzo en Cristo</label>
-                <label><input type="radio" name="q8" value="d"> Un acto de purificación física</label>
-            </div>
-        </div>
-        <div class="question">
-            <p>9. ¿Qué es el bautismo según el documento?</p>
-            <div class="options">
-                <label><input type="radio" name="q9" value="a"> Una formalidad sin importancia</label>
-                <label><input type="radio" name="q9" value="b"> Un evento social</label>
-                <label><input type="radio" name="q9" value="c"> Una ceremonia opcional</label>
-                <label><input type="radio" name="q9" value="d"> Un mandamiento de Cristo y un compromiso con Dios</label>
-            </div>
-        </div>
-        <div class="question">
-            <p>10. ¿Qué significa el término japonés “kangae naoshi” en el contexto del bautismo?</p>
-            <div class="options">
-                <label><input type="radio" name="q10" value="a"> Repensar la vida a la luz de Dios</label>
-                <label><input type="radio" name="q10" value="b"> Seguir las tradiciones</label>
-                <label><input type="radio" name="q10" value="c"> Cambiar de cultura</label>
-                <label><input type="radio" name="q10" value="d"> Olvidar el pasado sin fe</label>
-            </div>
-        </div>
-        <div class="question">
-            <p>11. ¿Qué aspecto comunitario tiene el bautismo?</p>
-            <div class="options">
-                <label><input type="radio" name="q11" value="a"> Es un acto privado</label>
-                <label><input type="radio" name="q11" value="b"> No involucra a la iglesia</label>
-                <label><input type="radio" name="q11" value="c"> Es solo para líderes</label>
-                <label><input type="radio" name="q11" value="d"> Integra al individuo a la comunidad de fe</label>
-            </div>
-        </div>
-        <div class="question">
-            <p>12. ¿Quién puede realizar el bautismo según el documento?</p>
-            <div class="options">
-                <label><input type="radio" name="q12" value="a"> Solo los sacerdotes</label>
-                <label><input type="radio" name="q12" value="b"> Quien predica, cuida y discipula</label>
-                <label><input type="radio" name="q12" value="c"> Cualquier persona sin fe</label>
-                <label><input type="radio" name="q12" value="d"> Solo los apóstoles</label>
-            </div>
-        </div>
-        <div class="question">
-            <p>13. ¿Quién puede ser bautizado según Marcos 16:16?</p>
-            <div class="options">
-                <label><input type="radio" name="q13" value="a"> Cualquier persona sin fe</label>
-                <label><input type="radio" name="q13" value="b"> Solo los recién nacidos</label>
-                <label><input type="radio" name="q13" value="c"> Quien cree y expresa su fe conscientemente</label>
-                <label><input type="radio" name="q13" value="d"> Solo los líderes religiosos</label>
-            </div>
-        </div>
-        <div class="question">
-            <p>14. ¿Qué relación hay entre el bautismo y el Nuevo Pacto?</p>
-            <div class="options">
-                <label><input type="radio" name="q14" value="a"> No tiene relación</label>
-                <label><input type="radio" name="q14" value="b"> Es solo un ritual judío</label>
-                <label><input type="radio" name="q14" value="c"> Representa el Antiguo Testamento</label>
-                <label><input type="radio" name="q14" value="d"> Simboliza la identificación con la muerte y resurrección de Cristo</label>
-            </div>
-        </div>
-        <div class="question">
-            <p>15. ¿Por qué es importante enseñar la verdadera esencia del bautismo?</p>
-            <div class="options">
-                <label><input type="radio" name="q15" value="a"> Para evitar malentendidos y destacar su compromiso con Dios</label>
-                <label><input type="radio" name="q15" value="b"> Para considerarlo solo un ritual</label>
-                <label><input type="radio" name="q15" value="c"> Para hacerlo opcional</label>
-                <label><input type="radio" name="q15" value="d"> Para limitarlo a pocas personas</label>
-            </div>
-        </div>
-        <button type="submit">Enviar Respuestas</button>
-    </form>
-    <div id="result"></div>
+  <h1>Quiz sobre o Batismo</h1>
+  <form id="quizForm">
+    <div id="studentInfo">
+      <label for="nomeAluno"><strong>Digite seu nome:</strong></label><br>
+      <input type="text" id="nomeAluno" name="nomeAluno" required style="width: 100%; padding: 10px; margin-top: 5px;" />
+    </div>
 
-    <script>
-        document.getElementById('quizForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const answers = {
-                q1: 'a',
-                q2: 'c',
-                q3: 'c',
-                q4: 'd',
-                q5: 'b',
-                q6: 'c',
-                q7: 'a',
-                q8: 'c',
-                q9: 'd',
-                q10: 'a',
-                q11: 'd',
-                q12: 'b',
-                q13: 'c',
-                q14: 'd',
-                q15: 'a'
-            };
-            let correct = 0;
-            let incorrect = 0;
-            let unanswered = 0;
+    <!-- Gerar as 15 perguntas -->
 
-            for (let i = 1; i <= 15; i++) {
-                const selected = document.querySelector(`input[name="q${i}"]:checked`);
-                if (!selected) {
-                    unanswered++;
-                } else if (selected.value === answers[`q${i}`]) {
-                    correct++;
-                } else {
-                    incorrect++;
-                }
-            }
+    <div class="question">
+      <p>1. Pergunta 1?</p>
+      <div class="options">
+        <label><input type="radio" name="q1" value="a" /> Opção A</label>
+        <label><input type="radio" name="q1" value="b" /> Opção B</label>
+        <label><input type="radio" name="q1" value="c" /> Opção C</label>
+        <label><input type="radio" name="q1" value="d" /> Opção D</label>
+      </div>
+    </div>
 
-            const resultDiv = document.getElementById('result');
-            if (unanswered > 0) {
-                resultDiv.innerHTML = `Por favor, responde todas las preguntas. Te faltan ${unanswered} pregunta(s).`;
-            } else {
-                resultDiv.innerHTML = `Resultados: <br> Aciertos: ${correct} <br> Errores: ${incorrect}`;
-            }
+    <div class="question">
+      <p>2. Pergunta 2?</p>
+      <div class="options">
+        <label><input type="radio" name="q2" value="a" /> Opção A</label>
+        <label><input type="radio" name="q2" value="b" /> Opção B</label>
+        <label><input type="radio" name="q2" value="c" /> Opção C</label>
+        <label><input type="radio" name="q2" value="d" /> Opção D</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>3. Pergunta 3?</p>
+      <div class="options">
+        <label><input type="radio" name="q3" value="a" /> Opção A</label>
+        <label><input type="radio" name="q3" value="b" /> Opção B</label>
+        <label><input type="radio" name="q3" value="c" /> Opção C</label>
+        <label><input type="radio" name="q3" value="d" /> Opção D</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>4. Pergunta 4?</p>
+      <div class="options">
+        <label><input type="radio" name="q4" value="a" /> Opção A</label>
+        <label><input type="radio" name="q4" value="b" /> Opção B</label>
+        <label><input type="radio" name="q4" value="c" /> Opção C</label>
+        <label><input type="radio" name="q4" value="d" /> Opção D</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>5. Pergunta 5?</p>
+      <div class="options">
+        <label><input type="radio" name="q5" value="a" /> Opção A</label>
+        <label><input type="radio" name="q5" value="b" /> Opção B</label>
+        <label><input type="radio" name="q5" value="c" /> Opção C</label>
+        <label><input type="radio" name="q5" value="d" /> Opção D</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>6. Pergunta 6?</p>
+      <div class="options">
+        <label><input type="radio" name="q6" value="a" /> Opção A</label>
+        <label><input type="radio" name="q6" value="b" /> Opção B</label>
+        <label><input type="radio" name="q6" value="c" /> Opção C</label>
+        <label><input type="radio" name="q6" value="d" /> Opção D</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>7. Pergunta 7?</p>
+      <div class="options">
+        <label><input type="radio" name="q7" value="a" /> Opção A</label>
+        <label><input type="radio" name="q7" value="b" /> Opção B</label>
+        <label><input type="radio" name="q7" value="c" /> Opção C</label>
+        <label><input type="radio" name="q7" value="d" /> Opção D</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>8. Pergunta 8?</p>
+      <div class="options">
+        <label><input type="radio" name="q8" value="a" /> Opção A</label>
+        <label><input type="radio" name="q8" value="b" /> Opção B</label>
+        <label><input type="radio" name="q8" value="c" /> Opção C</label>
+        <label><input type="radio" name="q8" value="d" /> Opção D</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>9. Pergunta 9?</p>
+      <div class="options">
+        <label><input type="radio" name="q9" value="a" /> Opção A</label>
+        <label><input type="radio" name="q9" value="b" /> Opção B</label>
+        <label><input type="radio" name="q9" value="c" /> Opção C</label>
+        <label><input type="radio" name="q9" value="d" /> Opção D</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>10. Pergunta 10?</p>
+      <div class="options">
+        <label><input type="radio" name="q10" value="a" /> Opção A</label>
+        <label><input type="radio" name="q10" value="b" /> Opção B</label>
+        <label><input type="radio" name="q10" value="c" /> Opção C</label>
+        <label><input type="radio" name="q10" value="d" /> Opção D</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>11. Pergunta 11?</p>
+      <div class="options">
+        <label><input type="radio" name="q11" value="a" /> Opção A</label>
+        <label><input type="radio" name="q11" value="b" /> Opção B</label>
+        <label><input type="radio" name="q11" value="c" /> Opção C</label>
+        <label><input type="radio" name="q11" value="d" /> Opção D</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>12. Pergunta 12?</p>
+      <div class="options">
+        <label><input type="radio" name="q12" value="a" /> Opção A</label>
+        <label><input type="radio" name="q12" value="b" /> Opção B</label>
+        <label><input type="radio" name="q12" value="c" /> Opção C</label>
+        <label><input type="radio" name="q12" value="d" /> Opção D</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>13. Pergunta 13?</p>
+      <div class="options">
+        <label><input type="radio" name="q13" value="a" /> Opção A</label>
+        <label><input type="radio" name="q13" value="b" /> Opção B</label>
+        <label><input type="radio" name="q13" value="c" /> Opção C</label>
+        <label><input type="radio" name="q13" value="d" /> Opção D</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>14. Pergunta 14?</p>
+      <div class="options">
+        <label><input type="radio" name="q14" value="a" /> Opção A</label>
+        <label><input type="radio" name="q14" value="b" /> Opção B</label>
+        <label><input type="radio" name="q14" value="c" /> Opção C</label>
+        <label><input type="radio" name="q14" value="d" /> Opção D</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>15. Pergunta 15?</p>
+      <div class="options">
+        <label><input type="radio" name="q15" value="a" /> Opção A</label>
+        <label><input type="radio" name="q15" value="b" /> Opção B</label>
+        <label><input type="radio" name="q15" value="c" /> Opção C</label>
+        <label><input type="radio" name="q15" value="d" /> Opção D</label>
+      </div>
+    </div>
+
+    <button type="submit">Enviar Respostas</button>
+    <button type="button" id="resetButton">Reiniciar Quiz</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    document.getElementById("quizForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const nome = document.getElementById("nomeAluno").value.trim();
+      if (nome === "") {
+        alert("Por favor, digite seu nome.");
+        return;
+      }
+      const answers = {
+        q1: "a", q2: "b", q3: "c", q4: "d", q5: "a",
+        q6: "b", q7: "c", q8: "d", q9: "a", q10: "b",
+        q11: "c", q12: "d", q13: "a", q14: "b", q15: "c"
+      };
+      let correct = 0, incorrect = 0, unanswered = 0;
+      for (let i = 1; i <= 15; i++) {
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        if (!selected) {
+          unanswered++;
+        } else if (selected.value === answers[`q${i}`]) {
+          correct++;
+        } else {
+          incorrect++;
+        }
+      }
+      const resultDiv = document.getElementById("result");
+      if (unanswered > 0) {
+        resultDiv.innerHTML = `Olá <strong>${nome}</strong>, você deixou ${unanswered} pergunta(s) sem responder.`;
+      } else {
+        resultDiv.innerHTML = `<strong>${nome}</strong>, seus resultados:<br><br>✅ Acertos: <strong>${correct}</strong><br>❌ Erros: <strong>${incorrect}</strong>`;
+        fetch("https://script.google.com/macros/s/AKfycbzqFLrZSbiVZPaMORQFDtrFn-81q8EsRIMgZcE5GP8TDr8zujwgdd87DRjqgmJI7Sdv/exec", {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: `nome=${encodeURIComponent(nome)}&acertos=${correct}&erros=${incorrect}`
         });
-    </script>
+      }
+    });
+    document.getElementById("resetButton").addEventListener("click", function () {
+      document.getElementById("quizForm").reset();
+      document.getElementById("result").innerHTML = "";
+    });
+  </script>
 </body>
 </html>
